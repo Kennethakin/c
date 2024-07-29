@@ -1,0 +1,111 @@
+#gameArea {
+    position: relative;
+    width: 80vw;
+    height: 60vh;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    display: none; /* Initially hidden */
+}
+
+#player, #target {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+#player {
+    background-color: #007bff;
+}
+
+#target {
+    background-color: #dc3545;
+}
+
+/* Style for score display */
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style for timer display */
+#timer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style for game over message */
+#gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    font-weight: bold;
+    color: #dc3545;
+    text-align: center;
+}
+
+/* Hidden class to hide elements */
+.hidden {
+    display: none;
+}
+
+/* Style for Start Game button */
+#startButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#startButton:hover {
+    background-color: #0056b3;
+}
+
+/* Ensure game area adjusts well on smaller screens */
+@media (max-width: 600px) {
+    #gameArea {
+        width: 90vw;
+        height: 70vh;
+    }
+
+    #player, #target {
+        width: 15vw;
+        height: 15vw;
+        max-width: 40px;
+        max-height: 40px;
+    }
+}
+
+/* Ensure game area adjusts well on very large screens */
+@media (min-width: 1200px) {
+    #gameArea {
+        width: 70vw;
+        height: 50vh;
+    }
+
+    #player, #target {
+        width: 8vw;
+        height: 8vw;
+        max-width: 60px;
+        max-height: 60px;
+    }
+}
