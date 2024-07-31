@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catch the Square Game</title>
+    <title>Number Guessing Game</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div id="gameArea" class="hidden">
-        <div id="player"></div>
-        <div id="target"></div>
-        <div id="score" class="hidden">Score: 0</div>
-        <div id="timer" class="hidden">Time Left: 1:00</div>
-        <div id="gameOver" class="hidden">Game Over! Final Score: 0</div> <!-- Added game over message -->
+    <div class="game-container">
+        <h1>Number Guessing Game</h1>
+        <p id="timer">Time Left: <span id="time">300</span> seconds</p>
+        <div id="game">
+            <p>Guess a number between 1 and 9:</p>
+            <input type="number" id="userGuess" min="1" max="9">
+            <button id="submitGuess">Submit Guess</button>
+            <p id="result"></p>
+            <p>Score: <span id="score">0</span></p>
+        </div>
+        <div id="finalScore" class="hidden">
+            <h2>Your Final Score: <span id="finalScoreValue"></span></h2>
+            <p id="remarks"></p>
+        </div>
     </div>
-    <button id="startButton">Start Game</button>
     <script src="./index.js"></script>
 </body>
 </html>

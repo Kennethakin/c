@@ -1,111 +1,104 @@
-#gameArea {
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f0f0f0;
+}
+
+.game-container {
+    text-align: center;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     position: relative;
-    width: 80vw;
-    height: 60vh;
-    background-color: #ffffff;
-    border: 2px solid #000000;
-    box-sizing: border-box;
-    display: none; /* Initially hidden */
+    max-width: 400px;
+    width: 100%;
 }
 
-#player, #target {
-    position: absolute;
-    width: 10vw;
-    height: 10vw;
-    max-width: 50px;
-    max-height: 50px;
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
 }
 
-#player {
+#game p {
+    font-size: 1.2em;
+}
+
+#userGuess {
+    font-size: 1.2em;
+    width: 80%;
+    max-width: 100px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#submitGuess {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 10px;
     background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#target {
-    background-color: #dc3545;
+#submitGuess:hover {
+    background-color: #0056b3;
 }
 
-/* Style for score display */
-#score {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #333;
+#result {
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
-/* Style for timer display */
-#timer {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Style for game over message */
-#gameOver {
+#finalScore {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2em;
-    font-weight: bold;
-    color: #dc3545;
-    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    max-width: 90%;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Hidden class to hide elements */
 .hidden {
     display: none;
 }
 
-/* Style for Start Game button */
-#startButton {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5em;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+@keyframes blueFlash {
+    0% { background-color: #00f; }
+    50% { background-color: #fff; }
+    100% { background-color: #00f; }
 }
 
-#startButton:hover {
-    background-color: #0056b3;
+@keyframes orangeFlash {
+    0% { background-color: #f80; }
+    50% { background-color: #fff; }
+    100% { background-color: #f80; }
 }
 
-/* Ensure game area adjusts well on smaller screens */
-@media (max-width: 600px) {
-    #gameArea {
-        width: 90vw;
-        height: 70vh;
-    }
-
-    #player, #target {
-        width: 15vw;
-        height: 15vw;
-        max-width: 40px;
-        max-height: 40px;
-    }
+@keyframes whiteFlash {
+    0% { background-color: #fff; }
+    50% { background-color: #f80; }
+    100% { background-color: #fff; }
 }
 
-/* Ensure game area adjusts well on very large screens */
-@media (min-width: 1200px) {
-    #gameArea {
-        width: 70vw;
-        height: 50vh;
-    }
+#result.correct {
+    animation: blueFlash 1s infinite;
+}
 
-    #player, #target {
-        width: 8vw;
-        height: 8vw;
-        max-width: 60px;
-        max-height: 60px;
-    }
+#result.incorrect {
+    animation: orangeFlash 1s infinite;
 }
