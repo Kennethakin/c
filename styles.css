@@ -1,104 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background: #f0f0f0;
 }
 
-.game-container {
-    text-align: center;
-    border: 2px solid #333;
-    border-radius: 10px;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    position: relative;
-    max-width: 400px;
+.container {
     width: 100%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-h1 {
-    font-size: 1.8em;
+header {
+    background: #4CAF50;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+form {
+    display: flex;
     margin-bottom: 20px;
 }
 
-#game p {
-    font-size: 1.2em;
-}
-
-#userGuess {
-    font-size: 1.2em;
-    width: 80%;
-    max-width: 100px;
+#todo-input {
+    flex: 1;
     padding: 10px;
-    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-#submitGuess {
-    font-size: 1.2em;
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #007bff;
+button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-#submitGuess:hover {
-    background-color: #0056b3;
+button:hover {
+    background-color: #45a049;
 }
 
-#result {
-    font-size: 1.2em;
-    margin-top: 10px;
+ul {
+    list-style-type: none;
 }
 
-#finalScore {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    padding: 20px;
-    border: 2px solid #333;
-    border-radius: 10px;
-    max-width: 90%;
-    width: 100%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.hidden {
-    display: none;
+li:last-child {
+    border-bottom: none;
 }
 
-@keyframes blueFlash {
-    0% { background-color: #00f; }
-    50% { background-color: #fff; }
-    100% { background-color: #00f; }
+button.delete-btn {
+    background-color: #f44336;
 }
 
-@keyframes orangeFlash {
-    0% { background-color: #f80; }
-    50% { background-color: #fff; }
-    100% { background-color: #f80; }
+button.delete-btn:hover {
+    background-color: #e53935;
 }
 
-@keyframes whiteFlash {
-    0% { background-color: #fff; }
-    50% { background-color: #f80; }
-    100% { background-color: #fff; }
-}
-
-#result.correct {
-    animation: blueFlash 1s infinite;
-}
-
-#result.incorrect {
-    animation: orangeFlash 1s infinite;
+footer {
+    background: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
 }
